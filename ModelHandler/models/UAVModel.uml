@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_upBcgN78Eeupbfmr0trA5Q" name="ArduCopter">
+  <packagedElement xmi:type="uml:Class" xmi:id="_upBcgd78Eeupbfmr0trA5Q" name="ArduCopter">
+    <ownedAttribute xmi:id="_upBcgt78Eeupbfmr0trA5Q" name="thrust" type="_upBcoN78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcg978Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBchN78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBchd78Eeupbfmr0trA5Q" name="heading" type="_upBcod78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcht78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBch978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBciN78Eeupbfmr0trA5Q" name="airspeed" type="_upBcot78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcid78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcit78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBci978Eeupbfmr0trA5Q" name="groundspeed" type="_upBco978Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcjN78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcjd78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcjt78Eeupbfmr0trA5Q" name="type" type="_upBcpN78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcj978Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBckN78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBckd78Eeupbfmr0trA5Q" name="rangefinder" type="_upBcqd78Eeupbfmr0trA5Q" aggregation="composite" association="_upBcsN78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBckt78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBck978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBclN78Eeupbfmr0trA5Q" name="location" type="_upBctN78Eeupbfmr0trA5Q" aggregation="composite" association="_upBcvt78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcld78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBclt78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcl978Eeupbfmr0trA5Q" name="attitude" type="_upBcwt78Eeupbfmr0trA5Q" aggregation="composite" association="_upBc2N78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcmN78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcmd78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcmt78Eeupbfmr0trA5Q" name="battery" type="_upBc3N78Eeupbfmr0trA5Q" aggregation="composite" association="_upBc5t78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcm978Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcnN78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcnd78Eeupbfmr0trA5Q" name="speed" type="_upBc6t78Eeupbfmr0trA5Q" association="_upBc9N78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcnt78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcn978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBcoN78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBcod78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBcot78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBco978Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_upBcpN78Eeupbfmr0trA5Q" name="UAVType">
+    <ownedLiteral xmi:id="_upBcpd78Eeupbfmr0trA5Q" name="helicopter"/>
+    <ownedLiteral xmi:id="_upBcpt78Eeupbfmr0trA5Q" name="multicopter"/>
+    <ownedLiteral xmi:id="_upBcp978Eeupbfmr0trA5Q" name="fixedwing"/>
+    <ownedLiteral xmi:id="_upBcqN78Eeupbfmr0trA5Q" name="hybrid"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_upBcqd78Eeupbfmr0trA5Q" name="Rangefinder">
+    <ownedAttribute xmi:id="_upBcqt78Eeupbfmr0trA5Q" name="distance" type="_upBdBd78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcq978Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcrN78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcrd78Eeupbfmr0trA5Q" name="voltage" type="_upBdBt78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcrt78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcr978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_upBcsN78Eeupbfmr0trA5Q" memberEnd="_upBckd78Eeupbfmr0trA5Q _upBcsd78Eeupbfmr0trA5Q">
+    <ownedEnd xmi:id="_upBcsd78Eeupbfmr0trA5Q" name="arducopter" type="_upBcgd78Eeupbfmr0trA5Q" association="_upBcsN78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcst78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcs978Eeupbfmr0trA5Q" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_upBctN78Eeupbfmr0trA5Q" name="CopterLocation">
+    <ownedAttribute xmi:id="_upBctd78Eeupbfmr0trA5Q" name="altitude_AGL" type="_upBc-N78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBctt78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBct978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcuN78Eeupbfmr0trA5Q" name="latitude" type="_upBc-d78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcud78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcut78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcu978Eeupbfmr0trA5Q" name="longitude" type="_upBc-t78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcvN78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcvd78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_upBcvt78Eeupbfmr0trA5Q" memberEnd="_upBclN78Eeupbfmr0trA5Q _upBcv978Eeupbfmr0trA5Q">
+    <ownedEnd xmi:id="_upBcv978Eeupbfmr0trA5Q" name="arducopter" type="_upBcgd78Eeupbfmr0trA5Q" association="_upBcvt78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcwN78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcwd78Eeupbfmr0trA5Q" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_upBcwt78Eeupbfmr0trA5Q" name="Attitude">
+    <ownedAttribute xmi:id="_upBcw978Eeupbfmr0trA5Q" name="pitch" type="_upBc-978Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcxN78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcxd78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcxt78Eeupbfmr0trA5Q" name="roll" type="_upBc_N78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcx978Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcyN78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcyd78Eeupbfmr0trA5Q" name="yaw" type="_upBc_d78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBcyt78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBcy978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBczN78Eeupbfmr0trA5Q" name="pitch_speed" type="_upBc_t78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBczd78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBczt78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBcz978Eeupbfmr0trA5Q" name="yaw_speed" type="_upBc_978Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc0N78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc0d78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBc0t78Eeupbfmr0trA5Q" name="roll_speed" type="_upBdAN78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc0978Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc1N78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBc1d78Eeupbfmr0trA5Q" name="yaw_rate" type="_upBdAd78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc1t78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc1978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_upBc2N78Eeupbfmr0trA5Q" memberEnd="_upBcl978Eeupbfmr0trA5Q _upBc2d78Eeupbfmr0trA5Q">
+    <ownedEnd xmi:id="_upBc2d78Eeupbfmr0trA5Q" name="arducopter" type="_upBcgd78Eeupbfmr0trA5Q" association="_upBc2N78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc2t78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc2978Eeupbfmr0trA5Q" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_upBc3N78Eeupbfmr0trA5Q" name="Battery">
+    <ownedAttribute xmi:id="_upBc3d78Eeupbfmr0trA5Q" name="voltage" type="_upBdAt78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc3t78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc3978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBc4N78Eeupbfmr0trA5Q" name="current" type="_upBdA978Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc4d78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc4t78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBc4978Eeupbfmr0trA5Q" name="level" type="_upBdBN78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc5N78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc5d78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_upBc5t78Eeupbfmr0trA5Q" memberEnd="_upBcmt78Eeupbfmr0trA5Q _upBc5978Eeupbfmr0trA5Q">
+    <ownedEnd xmi:id="_upBc5978Eeupbfmr0trA5Q" name="arducopter" type="_upBcgd78Eeupbfmr0trA5Q" association="_upBc5t78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc6N78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc6d78Eeupbfmr0trA5Q" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_upBc6t78Eeupbfmr0trA5Q" name="Speed">
+    <ownedAttribute xmi:id="_upBc6978Eeupbfmr0trA5Q" name="vx" type="_upBdB978Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc7N78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc7d78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBc7t78Eeupbfmr0trA5Q" name="vy" type="_upBdCN78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc7978Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc8N78Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_upBc8d78Eeupbfmr0trA5Q" name="vz" type="_upBdCd78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc8t78Eeupbfmr0trA5Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc8978Eeupbfmr0trA5Q" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_upBc9N78Eeupbfmr0trA5Q" memberEnd="_upBcnd78Eeupbfmr0trA5Q _upBc9d78Eeupbfmr0trA5Q">
+    <ownedEnd xmi:id="_upBc9d78Eeupbfmr0trA5Q" name="arducopter" type="_upBcgd78Eeupbfmr0trA5Q" association="_upBc9N78Eeupbfmr0trA5Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upBc9t78Eeupbfmr0trA5Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upBc9978Eeupbfmr0trA5Q" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBc-N78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBc-d78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBc-t78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBc-978Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBc_N78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBc_d78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBc_t78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBc_978Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdAN78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdAd78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdAt78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdA978Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdBN78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdBd78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdBt78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdB978Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdCN78Eeupbfmr0trA5Q" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_upBdCd78Eeupbfmr0trA5Q" name="Integer"/>
+</uml:Package>

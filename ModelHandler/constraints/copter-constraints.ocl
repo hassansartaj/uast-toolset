@@ -1,0 +1,96 @@
+-----------------------
+--General constraints
+-----------------------
+
+--airspeed values range
+context ArduCopter inv: self.airspeed>0 and self.airspeed<100
+
+--groundspeed values range
+context ArduCopter inv: self.groundspeed>0 and self.groundspeed<100
+
+--thrust values range
+context ArduCopter inv: self.thrust>=0 and self.thrust<=1
+
+--heading values range
+context ArduCopter inv: self.heading>0 and self.heading<100
+
+--correct lat/long values range
+context ArduCopter inv: (self.location.latitude>0 or self.location.latitude<0) and (self.location.longitude>0 or self.location.longitude<0)
+
+--altitude values range
+context ArduCopter inv: self.location.altitude_AGL>10 and self.location.altitude_AGL<1000
+
+--min possible battery level
+context ArduCopter inv: self.battery.level>10
+
+--attitude values range
+context ArduCopter inv: self.attitude.roll>=-30 and self.attitude.roll<=30
+context ArduCopter inv: self.attitude.pitch>=-30 and self.attitude.pitch<=30
+context ArduCopter inv: self.attitude.yaw>=-30 and self.attitude.yaw<=30
+
+context ArduCopter inv: self.attitude.roll_speed>=0 and self.attitude.roll_speed<=5
+context ArduCopter inv: self.attitude.pitch_speed>=0 and self.attitude.pitch_speed<=5
+context ArduCopter inv: self.attitude.yaw_speed>=0 and self.attitude.yaw_speed<=5
+context ArduCopter inv: self.attitude.yaw_rate>=0 and self.attitude.yaw_rate<=5
+
+
+---------------------
+--State invariants
+---------------------
+--State - Armed
+context ArduCopter inv: self.oclIsInState(Armed) and self.battery.level>10
+
+--State - TakeOff
+context ArduCopter inv: self.oclIsInState(TakeOff) and self.airspeed>0 and self.airspeed<100
+context ArduCopter inv: self.oclIsInState(TakeOff) and self.groundspeed>0 and self.groundspeed<10
+context ArduCopter inv: self.oclIsInState(TakeOff) and self.location.altitude_AGL>10 and self.location.altitude_AGL<100
+
+--State - Landing
+context ArduCopter inv: self.oclIsInState(Landing) and self.airspeed>0 and self.airspeed<100
+context ArduCopter inv: self.oclIsInState(Landing) and self.groundspeed>0 and self.groundspeed<10
+context ArduCopter inv: self.oclIsInState(Landing) and self.location.altitude_AGL>10 and self.location.altitude_AGL<100
+
+--State - Climb
+context ArduCopter inv: self.oclIsInState(Climb) and self.airspeed>0 and self.airspeed<100
+context ArduCopter inv: self.oclIsInState(Climb) and self.groundspeed>0 and self.groundspeed<10
+context ArduCopter inv: self.oclIsInState(Climb) and self.location.altitude_AGL>10 and self.location.altitude_AGL<100
+
+--State - Descent
+context ArduCopter inv: self.oclIsInState(Descent) and self.airspeed>0 and self.airspeed<100
+context ArduCopter inv: self.oclIsInState(Descent) and self.groundspeed>0 and self.groundspeed<10
+context ArduCopter inv: self.oclIsInState(Descent) and self.location.altitude_AGL>10 and self.location.altitude_AGL<100
+
+--State - PositionHold 
+context ArduCopter inv: self.oclIsInState(PositionHold) and self.airspeed>0 and self.airspeed<100
+context ArduCopter inv: self.oclIsInState(PositionHold) and self.groundspeed>0 and self.groundspeed<10
+context ArduCopter inv: self.oclIsInState(PositionHold) and self.location.altitude_AGL>10 and self.location.altitude_AGL<100
+
+context ArduCopter inv: self.oclIsInState(PositionHold) and self.attitude.roll>=0 and self.attitude.roll<=5
+context ArduCopter inv: self.oclIsInState(PositionHold) and self.attitude.pitch>=-30 and self.attitude.pitch<=30
+context ArduCopter inv: self.oclIsInState(PositionHold) and self.attitude.yaw>=-30 and self.attitude.yaw<=30
+
+--State - AltitudeHold
+context ArduCopter inv: self.oclIsInState(AltitudeHold) and self.airspeed>0 and self.airspeed<100
+context ArduCopter inv: self.oclIsInState(AltitudeHold) and self.groundspeed>0 and self.groundspeed<10
+context ArduCopter inv: self.oclIsInState(AltitudeHold) and self.location.altitude_AGL>10 and self.location.altitude_AGL<100
+
+--State - Loiter
+context ArduCopter inv: self.oclIsInState(Loiter) and self.airspeed>0 and self.airspeed<100
+context ArduCopter inv: self.oclIsInState(Loiter) and self.groundspeed>0 and self.groundspeed<10
+context ArduCopter inv: self.oclIsInState(Loiter) and self.location.altitude_AGL>10 and self.location.altitude_AGL<100
+
+--State - FlyingStraight
+context ArduCopter inv: self.oclIsInState(FlyingStraight) and self.attitude.roll>=-30 and self.attitude.roll<=30
+context ArduCopter inv: self.oclIsInState(FlyingStraight) and self.attitude.pitch>=-30 and self.attitude.pitch<=30
+context ArduCopter inv: self.oclIsInState(FlyingStraight) and self.attitude.yaw>=-30 and self.attitude.yaw<=30
+
+--State - TurningRight
+context ArduCopter inv: self.oclIsInState(TurningRight) and self.attitude.roll>=-30 and self.attitude.roll<=30
+context ArduCopter inv: self.oclIsInState(TurningRight) and self.attitude.pitch>=-30 and self.attitude.pitch<=30
+context ArduCopter inv: self.oclIsInState(TurningRight) and self.attitude.yaw>=-30 and self.attitude.yaw<=30
+
+--State - TurningLeft
+context ArduCopter inv: self.oclIsInState(TurningLeft) and self.attitude.roll>=-30 and self.attitude.roll<=30
+context ArduCopter inv: self.oclIsInState(TurningLeft) and self.attitude.pitch>=-30 and self.attitude.pitch<=30
+context ArduCopter inv: self.oclIsInState(TurningLeft) and self.attitude.yaw>=-30 and self.attitude.yaw<=30
+

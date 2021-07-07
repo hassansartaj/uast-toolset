@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UAVBehvioralProfile="http:///schemas/UAVBehvioralProfile/_5vI-gJeYEeq0DbKA3nxg-w/103" xmlns:UAVBehvioralProfile_1="http:///schemas/UAVBehvioralProfile/_6EpFwH5wEeqDAqBZw3ID9A/97" xmlns:UAVBehvioralProfile_2="http:///schemas/UAVBehvioralProfile/_OnqDEJW4Eeq9FKncTnYvJg/100" xmlns:UAVProfile="http:///schemas/UAVProfile/_sz_7UJW3Eeq9FKncTnYvJg/100" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/UAVBehvioralProfile/_5vI-gJeYEeq0DbKA3nxg-w/103 UAVBehvioralProfile.profile.uml#_uohidQMCEeuxhele48skoQ http:///schemas/UAVBehvioralProfile/_6EpFwH5wEeqDAqBZw3ID9A/97 UAVBehvioralProfile.profile.uml#_uojXHgMCEeuxhele48skoQ http:///schemas/UAVBehvioralProfile/_OnqDEJW4Eeq9FKncTnYvJg/100 UAVBehvioralProfile.profile.uml#_uoiveAMCEeuxhele48skoQ http:///schemas/UAVProfile/_sz_7UJW3Eeq9FKncTnYvJg/100 UAVProfile.profile.uml#_uoE1mgMCEeuxhele48skoQ">
+  <uml:Package xmi:id="_uo0c8QMCEeuxhele48skoQ" name="ArduCopter">
+    <packageImport xmi:id="_uo0c8gMCEeuxhele48skoQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uo0c8wMCEeuxhele48skoQ" name="ArduCopter">
+      <ownedAttribute xmi:id="_uo0c9AMCEeuxhele48skoQ" name="rangefinder" visibility="private" type="_uo0dugMCEeuxhele48skoQ" aggregation="composite" association="_uo0dvAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0c9QMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0c9gMCEeuxhele48skoQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_uo0c9wMCEeuxhele48skoQ" name="location" visibility="private" type="_uo0dtwMCEeuxhele48skoQ" aggregation="composite" association="_uo0dwAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0c-AMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0c-QMCEeuxhele48skoQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_uo0c-gMCEeuxhele48skoQ" name="attitude" visibility="private" type="_uo0duAMCEeuxhele48skoQ" aggregation="composite" association="_uo0dxAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0c-wMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0c_AMCEeuxhele48skoQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_uo0c_QMCEeuxhele48skoQ" name="battery" visibility="private" type="_uo0duQMCEeuxhele48skoQ" aggregation="composite" association="_uo0dyAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0c_gMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0c_wMCEeuxhele48skoQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_uo0dAAMCEeuxhele48skoQ" name="speed" visibility="private" type="_uo0duwMCEeuxhele48skoQ" association="_uo0dzAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0dAQMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0dAgMCEeuxhele48skoQ" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_uo0dAwMCEeuxhele48skoQ" name="ArduCopter-FSM">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_uo0dBAMCEeuxhele48skoQ" name="TurnSM" submachineState="_uo0dOQMCEeuxhele48skoQ _uo0dQAMCEeuxhele48skoQ _uo0dUAMCEeuxhele48skoQ _uo0dSgMCEeuxhele48skoQ">
+          <region xmi:id="_uo0dBQMCEeuxhele48skoQ" name="Region-Turns">
+            <subvertex xmi:type="uml:State" xmi:id="_uo0dBgMCEeuxhele48skoQ" name="Turning">
+              <region xmi:id="_uo0dBwMCEeuxhele48skoQ" name="Region1">
+                <subvertex xmi:type="uml:Pseudostate" xmi:id="_uo0dCAMCEeuxhele48skoQ"/>
+                <subvertex xmi:type="uml:State" xmi:id="_uo0dCQMCEeuxhele48skoQ" name="Straight"/>
+                <subvertex xmi:type="uml:State" xmi:id="_uo0dCgMCEeuxhele48skoQ" name="TurningRight"/>
+                <subvertex xmi:type="uml:State" xmi:id="_uo0dCwMCEeuxhele48skoQ" name="TurningLeft"/>
+                <subvertex xmi:type="uml:FinalState" xmi:id="_uo0dDAMCEeuxhele48skoQ"/>
+                <subvertex xmi:type="uml:Pseudostate" xmi:id="_uo0dDQMCEeuxhele48skoQ" kind="fork"/>
+                <transition xmi:id="_uo0dDgMCEeuxhele48skoQ" source="_uo0dCAMCEeuxhele48skoQ" target="_uo0dDQMCEeuxhele48skoQ">
+                  <eAnnotations xmi:id="_uo0dDwMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+                  <trigger xmi:id="_uo0dEAMCEeuxhele48skoQ" name="" event="_uo1DUAMCEeuxhele48skoQ"/>
+                  <trigger xmi:id="_uo0dEQMCEeuxhele48skoQ" name="" event="_uo1DUQMCEeuxhele48skoQ"/>
+                  <trigger xmi:id="_uo0dEgMCEeuxhele48skoQ" name="" event="_uo1DUgMCEeuxhele48skoQ"/>
+                  <trigger xmi:id="_uo0dEwMCEeuxhele48skoQ" name="" event="_uo1DYQMCEeuxhele48skoQ"/>
+                </transition>
+                <transition xmi:id="_uo0dFAMCEeuxhele48skoQ" source="_uo0dDQMCEeuxhele48skoQ" target="_uo0dCQMCEeuxhele48skoQ"/>
+                <transition xmi:id="_uo0dFQMCEeuxhele48skoQ" source="_uo0dDQMCEeuxhele48skoQ" target="_uo0dCwMCEeuxhele48skoQ"/>
+                <transition xmi:id="_uo0dFgMCEeuxhele48skoQ" source="_uo0dDQMCEeuxhele48skoQ" target="_uo0dCgMCEeuxhele48skoQ"/>
+                <transition xmi:id="_uo0dFwMCEeuxhele48skoQ" source="_uo0dCgMCEeuxhele48skoQ" target="_uo0dCQMCEeuxhele48skoQ">
+                  <eAnnotations xmi:id="_uo0dGAMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+                  <trigger xmi:id="_uo0dGQMCEeuxhele48skoQ" name="" event="_uo1DUgMCEeuxhele48skoQ"/>
+                  <trigger xmi:id="_uo0dGgMCEeuxhele48skoQ" name="" event="_uo1DYQMCEeuxhele48skoQ"/>
+                </transition>
+                <transition xmi:id="_uo0dGwMCEeuxhele48skoQ" source="_uo0dCwMCEeuxhele48skoQ" target="_uo0dCQMCEeuxhele48skoQ">
+                  <eAnnotations xmi:id="_uo0dHAMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+                  <trigger xmi:id="_uo0dHQMCEeuxhele48skoQ" name="" event="_uo1DUgMCEeuxhele48skoQ"/>
+                  <trigger xmi:id="_uo0dHgMCEeuxhele48skoQ" name="" event="_uo1DYQMCEeuxhele48skoQ"/>
+                </transition>
+                <transition xmi:id="_uo0dHwMCEeuxhele48skoQ" source="_uo0dCgMCEeuxhele48skoQ" target="_uo0dCwMCEeuxhele48skoQ">
+                  <eAnnotations xmi:id="_uo0dIAMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+                  <trigger xmi:id="_uo0dIQMCEeuxhele48skoQ" name="" event="_uo1DUAMCEeuxhele48skoQ"/>
+                </transition>
+                <transition xmi:id="_uo0dIgMCEeuxhele48skoQ" source="_uo0dCwMCEeuxhele48skoQ" target="_uo0dCgMCEeuxhele48skoQ">
+                  <eAnnotations xmi:id="_uo0dIwMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+                  <trigger xmi:id="_uo0dJAMCEeuxhele48skoQ" name="" event="_uo1DUQMCEeuxhele48skoQ"/>
+                </transition>
+                <transition xmi:id="_uo0dJQMCEeuxhele48skoQ" source="_uo0dCQMCEeuxhele48skoQ" target="_uo0dCgMCEeuxhele48skoQ">
+                  <eAnnotations xmi:id="_uo0dJgMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+                  <trigger xmi:id="_uo0dJwMCEeuxhele48skoQ" name="" event="_uo1DUQMCEeuxhele48skoQ"/>
+                </transition>
+                <transition xmi:id="_uo0dKAMCEeuxhele48skoQ" source="_uo0dCQMCEeuxhele48skoQ" target="_uo0dCwMCEeuxhele48skoQ">
+                  <eAnnotations xmi:id="_uo0dKQMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+                  <trigger xmi:id="_uo0dKgMCEeuxhele48skoQ" name="" event="_uo1DUAMCEeuxhele48skoQ"/>
+                </transition>
+                <transition xmi:id="_uo0dKwMCEeuxhele48skoQ" source="_uo0dCQMCEeuxhele48skoQ" target="_uo0dDAMCEeuxhele48skoQ"/>
+                <transition xmi:id="_uo0dLAMCEeuxhele48skoQ" source="_uo0dCwMCEeuxhele48skoQ" target="_uo0dDAMCEeuxhele48skoQ"/>
+                <transition xmi:id="_uo0dLQMCEeuxhele48skoQ" source="_uo0dCgMCEeuxhele48skoQ" target="_uo0dDAMCEeuxhele48skoQ"/>
+              </region>
+            </subvertex>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_uo0dLgMCEeuxhele48skoQ" name="turnLeft"/>
+        <ownedOperation xmi:id="_uo0dLwMCEeuxhele48skoQ" name="turnRight"/>
+        <ownedOperation xmi:id="_uo0dMAMCEeuxhele48skoQ" name="moveForward"/>
+        <ownedOperation xmi:id="_uo0dMQMCEeuxhele48skoQ" name="moveBackward"/>
+        <region xmi:id="_uo0dMgMCEeuxhele48skoQ" name="Region-FSM">
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_uo0dMwMCEeuxhele48skoQ"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_uo0dNAMCEeuxhele48skoQ"/>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dNQMCEeuxhele48skoQ" name="Idle"/>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dNgMCEeuxhele48skoQ" name="Armed"/>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dNwMCEeuxhele48skoQ" name="Ascend">
+            <region xmi:id="_uo0dOAMCEeuxhele48skoQ" name="Region1">
+              <subvertex xmi:type="uml:State" xmi:id="_uo0dOQMCEeuxhele48skoQ" name="Turning" submachine="_uo0dBAMCEeuxhele48skoQ"/>
+              <transition xmi:id="_uo0dOgMCEeuxhele48skoQ" kind="local" source="_uo0dNwMCEeuxhele48skoQ" target="_uo0dOQMCEeuxhele48skoQ">
+                <trigger xmi:id="_uo0dOwMCEeuxhele48skoQ" name="" event="_uo1DUgMCEeuxhele48skoQ"/>
+                <trigger xmi:id="_uo0dPAMCEeuxhele48skoQ" name="" event="_uo1DUAMCEeuxhele48skoQ"/>
+                <trigger xmi:id="_uo0dPQMCEeuxhele48skoQ" name="" event="_uo1DUQMCEeuxhele48skoQ"/>
+              </transition>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dPgMCEeuxhele48skoQ" name="Descend">
+            <region xmi:id="_uo0dPwMCEeuxhele48skoQ" name="Region1">
+              <subvertex xmi:type="uml:State" xmi:id="_uo0dQAMCEeuxhele48skoQ" name="Turning" submachine="_uo0dBAMCEeuxhele48skoQ"/>
+              <transition xmi:id="_uo0dQQMCEeuxhele48skoQ" name="Transition" kind="internal" source="_uo0dQAMCEeuxhele48skoQ" target="_uo0dQAMCEeuxhele48skoQ"/>
+              <transition xmi:id="_uo0dQgMCEeuxhele48skoQ" kind="local" source="_uo0dPgMCEeuxhele48skoQ" target="_uo0dQAMCEeuxhele48skoQ">
+                <trigger xmi:id="_uo0dQwMCEeuxhele48skoQ" name="" event="_uo1DUgMCEeuxhele48skoQ"/>
+                <trigger xmi:id="_uo0dRAMCEeuxhele48skoQ" name="" event="_uo1DUQMCEeuxhele48skoQ"/>
+                <trigger xmi:id="_uo0dRQMCEeuxhele48skoQ" name="" event="_uo1DUAMCEeuxhele48skoQ"/>
+              </transition>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dRgMCEeuxhele48skoQ" name="Takeoff"/>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dRwMCEeuxhele48skoQ" name="Landing"/>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dSAMCEeuxhele48skoQ" name="Loitering">
+            <region xmi:id="_uo0dSQMCEeuxhele48skoQ" name="Region1">
+              <subvertex xmi:type="uml:State" xmi:id="_uo0dSgMCEeuxhele48skoQ" name="Turning" submachine="_uo0dBAMCEeuxhele48skoQ"/>
+              <transition xmi:id="_uo0dSwMCEeuxhele48skoQ" kind="local" source="_uo0dSAMCEeuxhele48skoQ" target="_uo0dSgMCEeuxhele48skoQ">
+                <trigger xmi:id="_uo0dTAMCEeuxhele48skoQ" name="" event="_uo1DUQMCEeuxhele48skoQ"/>
+                <trigger xmi:id="_uo0dTQMCEeuxhele48skoQ" name="" event="_uo1DUAMCEeuxhele48skoQ"/>
+              </transition>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dTgMCEeuxhele48skoQ" name="LevelAltitude">
+            <region xmi:id="_uo0dTwMCEeuxhele48skoQ" name="Region1">
+              <subvertex xmi:type="uml:State" xmi:id="_uo0dUAMCEeuxhele48skoQ" name="Turning" submachine="_uo0dBAMCEeuxhele48skoQ"/>
+              <transition xmi:id="_uo0dUQMCEeuxhele48skoQ" kind="local" source="_uo0dTgMCEeuxhele48skoQ" target="_uo0dUAMCEeuxhele48skoQ">
+                <trigger xmi:id="_uo0dUgMCEeuxhele48skoQ" name="" event="_uo1DUgMCEeuxhele48skoQ"/>
+                <trigger xmi:id="_uo0dUwMCEeuxhele48skoQ" name="" event="_uo1DYQMCEeuxhele48skoQ"/>
+                <trigger xmi:id="_uo0dVAMCEeuxhele48skoQ" name="" event="_uo1DUAMCEeuxhele48skoQ"/>
+                <trigger xmi:id="_uo0dVQMCEeuxhele48skoQ" name="" event="_uo1DUQMCEeuxhele48skoQ"/>
+              </transition>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_uo0dVgMCEeuxhele48skoQ" name="HoldingPosition"/>
+          <transition xmi:id="_uo0dVwMCEeuxhele48skoQ" source="_uo0dNwMCEeuxhele48skoQ" target="_uo0dNwMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dWAMCEeuxhele48skoQ" name="" event="_uo1DVwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dWQMCEeuxhele48skoQ" source="_uo0dMwMCEeuxhele48skoQ" target="_uo0dNQMCEeuxhele48skoQ"/>
+          <transition xmi:id="_uo0dWgMCEeuxhele48skoQ" source="_uo0dNQMCEeuxhele48skoQ" target="_uo0dNAMCEeuxhele48skoQ"/>
+          <transition xmi:id="_uo0dWwMCEeuxhele48skoQ" source="_uo0dNQMCEeuxhele48skoQ" target="_uo0dNgMCEeuxhele48skoQ">
+            <eAnnotations xmi:id="_uo0dXAMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+            <trigger xmi:id="_uo0dXQMCEeuxhele48skoQ" name="" event="_uo1DUwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dXgMCEeuxhele48skoQ" source="_uo0dNgMCEeuxhele48skoQ" target="_uo0dNQMCEeuxhele48skoQ">
+            <eAnnotations xmi:id="_uo0dXwMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+            <trigger xmi:id="_uo0dYAMCEeuxhele48skoQ" name="" event="_uo1DVAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dYQMCEeuxhele48skoQ" source="_uo0dNgMCEeuxhele48skoQ" target="_uo0dRgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dYgMCEeuxhele48skoQ" name="" event="_uo1DVQMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dYwMCEeuxhele48skoQ" source="_uo0dRgMCEeuxhele48skoQ" target="_uo0dRwMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dZAMCEeuxhele48skoQ" name="" event="_uo1DVgMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dZQMCEeuxhele48skoQ" source="_uo0dRwMCEeuxhele48skoQ" target="_uo0dNQMCEeuxhele48skoQ">
+            <eAnnotations xmi:id="_uo0dZgMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+            <trigger xmi:id="_uo0dZwMCEeuxhele48skoQ" name="" event="_uo1DVAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0daAMCEeuxhele48skoQ" source="_uo0dPgMCEeuxhele48skoQ" target="_uo0dPgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0daQMCEeuxhele48skoQ" name="" event="_uo1DWAMCEeuxhele48skoQ"/>
+            <trigger xmi:id="_uo0dagMCEeuxhele48skoQ" name="" event="_uo1DYwMCEeuxhele48skoQ"/>
+            <trigger xmi:id="_uo0dawMCEeuxhele48skoQ" name="" event="_uo1DYAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dbAMCEeuxhele48skoQ" source="_uo0dRgMCEeuxhele48skoQ" target="_uo0dNwMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dbQMCEeuxhele48skoQ" name="" event="_uo1DVwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dbgMCEeuxhele48skoQ" source="_uo0dRgMCEeuxhele48skoQ" target="_uo0dSAMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dbwMCEeuxhele48skoQ" name="" event="_uo1DWwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dcAMCEeuxhele48skoQ" source="_uo0dRgMCEeuxhele48skoQ" target="_uo0dVgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dcQMCEeuxhele48skoQ" name="" event="_uo1DWgMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dcgMCEeuxhele48skoQ" source="_uo0dRgMCEeuxhele48skoQ" target="_uo0dPgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dcwMCEeuxhele48skoQ" name="" event="_uo1DWAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0ddAMCEeuxhele48skoQ" source="_uo0dNwMCEeuxhele48skoQ" target="_uo0dSAMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0ddQMCEeuxhele48skoQ" name="" event="_uo1DWwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0ddgMCEeuxhele48skoQ" source="_uo0dSAMCEeuxhele48skoQ" target="_uo0dNwMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0ddwMCEeuxhele48skoQ" name="" event="_uo1DVwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0deAMCEeuxhele48skoQ" source="_uo0dNwMCEeuxhele48skoQ" target="_uo0dPgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0deQMCEeuxhele48skoQ" name="" event="_uo1DWAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0degMCEeuxhele48skoQ" source="_uo0dNwMCEeuxhele48skoQ" target="_uo0dTgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dewMCEeuxhele48skoQ" name="" event="_uo1DWQMCEeuxhele48skoQ"/>
+            <trigger xmi:id="_uo0dfAMCEeuxhele48skoQ" name="" event="_uo1DZAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dfQMCEeuxhele48skoQ" source="_uo0dNwMCEeuxhele48skoQ" target="_uo0dVgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dfgMCEeuxhele48skoQ" name="" event="_uo1DWgMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dfwMCEeuxhele48skoQ" source="_uo0dPgMCEeuxhele48skoQ" target="_uo0dNwMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dgAMCEeuxhele48skoQ" name="" event="_uo1DVwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dgQMCEeuxhele48skoQ" source="_uo0dPgMCEeuxhele48skoQ" target="_uo0dTgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dggMCEeuxhele48skoQ" name="" event="_uo1DWQMCEeuxhele48skoQ"/>
+            <trigger xmi:id="_uo0dgwMCEeuxhele48skoQ" name="" event="_uo1DZAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dhAMCEeuxhele48skoQ" source="_uo0dPgMCEeuxhele48skoQ" target="_uo0dVgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dhQMCEeuxhele48skoQ" name="" event="_uo1DWgMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dhgMCEeuxhele48skoQ" source="_uo0dPgMCEeuxhele48skoQ" target="_uo0dSAMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dhwMCEeuxhele48skoQ" name="" event="_uo1DWwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0diAMCEeuxhele48skoQ" source="_uo0dSAMCEeuxhele48skoQ" target="_uo0dPgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0diQMCEeuxhele48skoQ" name="" event="_uo1DWAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0digMCEeuxhele48skoQ" source="_uo0dSAMCEeuxhele48skoQ" target="_uo0dTgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0diwMCEeuxhele48skoQ" name="" event="_uo1DWQMCEeuxhele48skoQ"/>
+            <trigger xmi:id="_uo0djAMCEeuxhele48skoQ" name="" event="_uo1DZAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0djQMCEeuxhele48skoQ" source="_uo0dSAMCEeuxhele48skoQ" target="_uo0dVgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0djgMCEeuxhele48skoQ" name="" event="_uo1DWgMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0djwMCEeuxhele48skoQ" source="_uo0dTgMCEeuxhele48skoQ" target="_uo0dPgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dkAMCEeuxhele48skoQ" name="" event="_uo1DWAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dkQMCEeuxhele48skoQ" source="_uo0dTgMCEeuxhele48skoQ" target="_uo0dVgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dkgMCEeuxhele48skoQ" name="" event="_uo1DWgMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dkwMCEeuxhele48skoQ" source="_uo0dTgMCEeuxhele48skoQ" target="_uo0dNwMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dlAMCEeuxhele48skoQ" name="" event="_uo1DVwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dlQMCEeuxhele48skoQ" source="_uo0dTgMCEeuxhele48skoQ" target="_uo0dSAMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dlgMCEeuxhele48skoQ" name="" event="_uo1DWwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dlwMCEeuxhele48skoQ" source="_uo0dVgMCEeuxhele48skoQ" target="_uo0dPgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dmAMCEeuxhele48skoQ" name="" event="_uo1DWAMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dmQMCEeuxhele48skoQ" source="_uo0dVgMCEeuxhele48skoQ" target="_uo0dNwMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dmgMCEeuxhele48skoQ" name="" event="_uo1DVwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dmwMCEeuxhele48skoQ" source="_uo0dRgMCEeuxhele48skoQ" target="_uo0dTgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dnAMCEeuxhele48skoQ" name="" event="_uo1DWQMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dnQMCEeuxhele48skoQ" source="_uo0dPgMCEeuxhele48skoQ" target="_uo0dRwMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dngMCEeuxhele48skoQ" name="" event="_uo1DVgMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0dnwMCEeuxhele48skoQ" source="_uo0dVgMCEeuxhele48skoQ" target="_uo0dSAMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0doAMCEeuxhele48skoQ" name="" event="_uo1DWwMCEeuxhele48skoQ"/>
+          </transition>
+          <transition xmi:id="_uo0doQMCEeuxhele48skoQ" source="_uo0dVgMCEeuxhele48skoQ" target="_uo0dTgMCEeuxhele48skoQ">
+            <trigger xmi:id="_uo0dogMCEeuxhele48skoQ" name="" event="_uo1DWQMCEeuxhele48skoQ"/>
+            <trigger xmi:id="_uo0dowMCEeuxhele48skoQ" name="" event="_uo1DZAMCEeuxhele48skoQ"/>
+          </transition>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_uo0dpAMCEeuxhele48skoQ" name="armUAV"/>
+      <ownedOperation xmi:id="_uo0dpQMCEeuxhele48skoQ" name="disarmUAV"/>
+      <ownedOperation xmi:id="_uo0dpgMCEeuxhele48skoQ" name="takeoff"/>
+      <ownedOperation xmi:id="_uo0dpwMCEeuxhele48skoQ" name="landUAV">
+        <eAnnotations xmi:id="_uo0dqAMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_uo0dqQMCEeuxhele48skoQ" name="increaseAlt"/>
+      <ownedOperation xmi:id="_uo0dqgMCEeuxhele48skoQ" name="decreaseAlt"/>
+      <ownedOperation xmi:id="_uo0dqwMCEeuxhele48skoQ" name="holdAlt"/>
+      <ownedOperation xmi:id="_uo0drAMCEeuxhele48skoQ" name="holdPosition"/>
+      <ownedOperation xmi:id="_uo0drQMCEeuxhele48skoQ" name="startLoiter"/>
+      <ownedOperation xmi:id="_uo0drgMCEeuxhele48skoQ" name="flyCircle"/>
+      <ownedOperation xmi:id="_uo0drwMCEeuxhele48skoQ" name="RTL"/>
+      <ownedOperation xmi:id="_uo0dsAMCEeuxhele48skoQ" name="thurstTakeoff"/>
+      <ownedOperation xmi:id="_uo0dsQMCEeuxhele48skoQ" name="increaseThurst"/>
+      <ownedOperation xmi:id="_uo0dsgMCEeuxhele48skoQ" name="decreaseThurst"/>
+      <ownedOperation xmi:id="_uo0dswMCEeuxhele48skoQ" name="increaseSpeed"/>
+      <ownedOperation xmi:id="_uo0dtAMCEeuxhele48skoQ" name="decreaseSpeed"/>
+      <ownedOperation xmi:id="_uo0dtQMCEeuxhele48skoQ" name="holdAttitude"/>
+      <ownedOperation xmi:id="_uo0dtgMCEeuxhele48skoQ" name="holdSpeed"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uo0dtwMCEeuxhele48skoQ" name="CopterLocation"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uo0duAMCEeuxhele48skoQ" name="Attitude"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uo0duQMCEeuxhele48skoQ" name="Battery"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uo0dugMCEeuxhele48skoQ" name="Rangefinder"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uo0duwMCEeuxhele48skoQ" name="Speed"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_uo0dvAMCEeuxhele48skoQ" memberEnd="_uo0c9AMCEeuxhele48skoQ _uo0dvQMCEeuxhele48skoQ">
+      <ownedEnd xmi:id="_uo0dvQMCEeuxhele48skoQ" name="" visibility="private" type="_uo0c8wMCEeuxhele48skoQ" association="_uo0dvAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0dvgMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0dvwMCEeuxhele48skoQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_uo0dwAMCEeuxhele48skoQ" memberEnd="_uo0c9wMCEeuxhele48skoQ _uo0dwQMCEeuxhele48skoQ">
+      <ownedEnd xmi:id="_uo0dwQMCEeuxhele48skoQ" name="" visibility="private" type="_uo0c8wMCEeuxhele48skoQ" association="_uo0dwAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0dwgMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0dwwMCEeuxhele48skoQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_uo0dxAMCEeuxhele48skoQ" memberEnd="_uo0c-gMCEeuxhele48skoQ _uo0dxQMCEeuxhele48skoQ">
+      <ownedEnd xmi:id="_uo0dxQMCEeuxhele48skoQ" name="" visibility="private" type="_uo0c8wMCEeuxhele48skoQ" association="_uo0dxAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0dxgMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0dxwMCEeuxhele48skoQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_uo0dyAMCEeuxhele48skoQ" memberEnd="_uo0c_QMCEeuxhele48skoQ _uo0dyQMCEeuxhele48skoQ">
+      <ownedEnd xmi:id="_uo0dyQMCEeuxhele48skoQ" name="" visibility="private" type="_uo0c8wMCEeuxhele48skoQ" association="_uo0dyAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0dygMCEeuxhele48skoQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0dywMCEeuxhele48skoQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_uo0dzAMCEeuxhele48skoQ" memberEnd="_uo0dAAMCEeuxhele48skoQ _uo0dzQMCEeuxhele48skoQ">
+      <ownedEnd xmi:id="_uo0dzQMCEeuxhele48skoQ" name="" visibility="private" type="_uo0c8wMCEeuxhele48skoQ" association="_uo0dzAMCEeuxhele48skoQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uo0dzgMCEeuxhele48skoQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uo0dzwMCEeuxhele48skoQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DUAMCEeuxhele48skoQ" name="turnLeft" operation="_uo0dLgMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DUQMCEeuxhele48skoQ" name="turnRight" operation="_uo0dLwMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DUgMCEeuxhele48skoQ" name="moveForward" operation="_uo0dMAMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DUwMCEeuxhele48skoQ" name="armUAV" operation="_uo0dpAMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DVAMCEeuxhele48skoQ" name="disarmUAV" operation="_uo0dpQMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DVQMCEeuxhele48skoQ" name="takeoff" operation="_uo0dpgMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DVgMCEeuxhele48skoQ" name="landUAV" operation="_uo0dpwMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DVwMCEeuxhele48skoQ" name="increaseAlt" operation="_uo0dqQMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DWAMCEeuxhele48skoQ" name="decreaseAlt" operation="_uo0dqgMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DWQMCEeuxhele48skoQ" name="holdAlt" operation="_uo0dqwMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DWgMCEeuxhele48skoQ" name="holdPosition" operation="_uo0drAMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DWwMCEeuxhele48skoQ" name="startLoiter" operation="_uo0drQMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DXAMCEeuxhele48skoQ" name="flyCircle" operation="_uo0drgMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DXQMCEeuxhele48skoQ" name="RTL" operation="_uo0drwMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DXgMCEeuxhele48skoQ" name="thurstTakeoff" operation="_uo0dsAMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DXwMCEeuxhele48skoQ" name="increaseThurst" operation="_uo0dsQMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DYAMCEeuxhele48skoQ" name="decreaseThurst" operation="_uo0dsgMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DYQMCEeuxhele48skoQ" name="moveBackward" operation="_uo0dMQMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DYgMCEeuxhele48skoQ" name="increaseSpeed" operation="_uo0dswMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DYwMCEeuxhele48skoQ" name="decreaseSpeed" operation="_uo0dtAMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DZAMCEeuxhele48skoQ" name="holdAttitude" operation="_uo0dtQMCEeuxhele48skoQ"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_uo1DZQMCEeuxhele48skoQ" name="holdSpeed" operation="_uo0dtgMCEeuxhele48skoQ"/>
+    <profileApplication xmi:id="_uo1DZgMCEeuxhele48skoQ">
+      <eAnnotations xmi:id="_uo1DZwMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_uo1DaAMCEeuxhele48skoQ">
+      <eAnnotations xmi:id="_uo1DaQMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="Default.profile.uml#_uozOPAMCEeuxhele48skoQ"/>
+      </eAnnotations>
+      <appliedProfile href="Default.profile.uml#_uozOOgMCEeuxhele48skoQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_uo1DagMCEeuxhele48skoQ">
+      <eAnnotations xmi:id="_uo1DawMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="Deployment.profile.uml#_un0X8gMCEeuxhele48skoQ"/>
+      </eAnnotations>
+      <appliedProfile href="Deployment.profile.uml#_un0X8AMCEeuxhele48skoQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_uo1DbAMCEeuxhele48skoQ">
+      <eAnnotations xmi:id="_uo1DbQMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="UAVProfile.profile.uml#_uoE1mgMCEeuxhele48skoQ"/>
+      </eAnnotations>
+      <appliedProfile href="UAVProfile.profile.uml#_uoE1mAMCEeuxhele48skoQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_uo1DbgMCEeuxhele48skoQ">
+      <eAnnotations xmi:id="_uo1DbwMCEeuxhele48skoQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="UAVBehvioralProfile.profile.uml#_uohidQMCEeuxhele48skoQ"/>
+      </eAnnotations>
+      <appliedProfile href="UAVBehvioralProfile.profile.uml#_uohicwMCEeuxhele48skoQ"/>
+    </profileApplication>
+  </uml:Package>
+  <UAVProfile:UAV xmi:id="_uo1DcAMCEeuxhele48skoQ" type="multicopter" base_Class="_uo0c8wMCEeuxhele48skoQ"/>
+  <UAVProfile:LocationGlobalRelative xmi:id="_uo1DcQMCEeuxhele48skoQ" base_Class="_uo0dtwMCEeuxhele48skoQ"/>
+  <UAVProfile:Attitude xmi:id="_uo1DcgMCEeuxhele48skoQ" base_Class="_uo0duAMCEeuxhele48skoQ"/>
+  <UAVProfile:Battery xmi:id="_uo1DcwMCEeuxhele48skoQ" base_Class="_uo0duQMCEeuxhele48skoQ"/>
+  <UAVProfile:RangeFinder xmi:id="_uo1DdAMCEeuxhele48skoQ" base_Class="_uo0dugMCEeuxhele48skoQ"/>
+  <UAVProfile:Velocity xmi:id="_uo1DdQMCEeuxhele48skoQ" base_Class="_uo0duwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Disarmed xmi:id="_uo1DdgMCEeuxhele48skoQ" base_State="_uo0dNQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Armed xmi:id="_uo1DdwMCEeuxhele48skoQ" base_State="_uo0dNgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Landing xmi:id="_uo1DeAMCEeuxhele48skoQ" base_State="_uo0dRwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:TakeOff xmi:id="_uo1DeQMCEeuxhele48skoQ" base_State="_uo0dRgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Climb xmi:id="_uo1DegMCEeuxhele48skoQ" base_State="_uo0dNwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Descent xmi:id="_uo1DewMCEeuxhele48skoQ" base_State="_uo0dPgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Loiter xmi:id="_uo1DfAMCEeuxhele48skoQ" base_State="_uo0dSAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:PositionHold xmi:id="_uo1DfQMCEeuxhele48skoQ" base_State="_uo0dVgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:AltitudeHold xmi:id="_uo1DfgMCEeuxhele48skoQ" base_State="_uo0dTgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:FlyingStraight xmi:id="_uo1DfwMCEeuxhele48skoQ" base_State="_uo0dCQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:TurningRight xmi:id="_uo1DgAMCEeuxhele48skoQ" base_State="_uo0dCgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:TurningLeft xmi:id="_uo1DgQMCEeuxhele48skoQ" base_State="_uo0dCwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:MoveForward xmi:id="_uo1DggMCEeuxhele48skoQ" base_CallEvent="_uo1DUgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:TurnLeft xmi:id="_uo1DgwMCEeuxhele48skoQ" base_CallEvent="_uo1DUAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:TurnRight xmi:id="_uo1DhAMCEeuxhele48skoQ" base_CallEvent="_uo1DUQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Arm xmi:id="_uo1DhQMCEeuxhele48skoQ" base_CallEvent="_uo1DUwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Disarm xmi:id="_uo1DhgMCEeuxhele48skoQ" base_CallEvent="_uo1DVAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Takeoff xmi:id="_uo1DhwMCEeuxhele48skoQ" base_CallEvent="_uo1DVQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Land xmi:id="_uo1DiAMCEeuxhele48skoQ" base_CallEvent="_uo1DVgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:DecreaseAltitude xmi:id="_uo1DiQMCEeuxhele48skoQ" base_CallEvent="_uo1DWAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:IncreaseAltitude xmi:id="_uo1DigMCEeuxhele48skoQ" base_CallEvent="_uo1DVwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:HoldAltitude xmi:id="_uo1DiwMCEeuxhele48skoQ" base_CallEvent="_uo1DWQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:HoldPosition xmi:id="_uo1DjAMCEeuxhele48skoQ" base_CallEvent="_uo1DWgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile_1:Loiter xmi:id="_uo1DjQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:ReturnToLaunch xmi:id="_uo1DjgMCEeuxhele48skoQ" base_CallEvent="_uo1DXQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:IncreaseThrust xmi:id="_uo1DjwMCEeuxhele48skoQ" base_CallEvent="_uo1DXgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:Takeoff xmi:id="_uo1DkAMCEeuxhele48skoQ" base_CallEvent="_uo1DXgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:FlyCircle xmi:id="_uo1DkQMCEeuxhele48skoQ" base_CallEvent="_uo1DXAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:DecreaseThurst xmi:id="_uo1DkgMCEeuxhele48skoQ" base_CallEvent="_uo1DYAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:DecreaseThurst xmi:id="_uo1DkwMCEeuxhele48skoQ" base_CallEvent="_uo1DXwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile_1:Loiter xmi:id="_uo1DlAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:MoveForward xmi:id="_uo1DlQMCEeuxhele48skoQ" base_CallEvent="_uo1DYQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:ChangeVelocity xmi:id="_uo1DlgMCEeuxhele48skoQ" base_CallEvent="_uo1DYgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:IncreaseAirspeed xmi:id="_uo1DlwMCEeuxhele48skoQ" base_CallEvent="_uo1DYgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:IncreaseGroundspeed xmi:id="_uo1DmAMCEeuxhele48skoQ" base_CallEvent="_uo1DYgMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:ChangeVelocity xmi:id="_uo1DmQMCEeuxhele48skoQ" base_CallEvent="_uo1DYwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:DecreaseAirspeed xmi:id="_uo1DmgMCEeuxhele48skoQ" base_CallEvent="_uo1DYwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:DecreaseGroundspeed xmi:id="_uo1DmwMCEeuxhele48skoQ" base_CallEvent="_uo1DYwMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:ChangePitch xmi:id="_uo1DnAMCEeuxhele48skoQ" base_CallEvent="_uo1DZAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:ChangeRoll xmi:id="_uo1DnQMCEeuxhele48skoQ" base_CallEvent="_uo1DZAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:ChangeYaw xmi:id="_uo1DngMCEeuxhele48skoQ" base_CallEvent="_uo1DZAMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:ChangeVelocity xmi:id="_uo1DnwMCEeuxhele48skoQ" base_CallEvent="_uo1DZQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:DecreaseAirspeed xmi:id="_uo1DoAMCEeuxhele48skoQ" base_CallEvent="_uo1DZQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:DecreaseGroundspeed xmi:id="_uo1DoQMCEeuxhele48skoQ" base_CallEvent="_uo1DZQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:IncreaseAirspeed xmi:id="_uo1DogMCEeuxhele48skoQ" base_CallEvent="_uo1DZQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile:IncreaseGroundspeed xmi:id="_uo1DowMCEeuxhele48skoQ" base_CallEvent="_uo1DZQMCEeuxhele48skoQ"/>
+  <UAVBehvioralProfile_2:Loiter xmi:id="_uo1DpAMCEeuxhele48skoQ"/>
+</xmi:XMI>
