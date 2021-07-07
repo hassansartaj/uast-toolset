@@ -40,10 +40,6 @@ NUM_EPISODES = 5000
 
 if __name__ == '__main__':
     
-#     sys.argv[1] = 'train/eval'
-#     sys.argv[2] = 'trainedmodel'
-#     tensorboard --logdir=E:\ate-pro-v1\AITester\runs
-
     if len(sys.argv) < 3:
         print('The following two arguments are required. \n argv[1] = mode (train/eval) \n argv[2] = model path')
         sys.exit(0)
