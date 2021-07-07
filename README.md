@@ -8,23 +8,18 @@ A toolset to support automated system-level testing of unmanned aerial systems (
 
 ## Basic Requirements
 * Machine: minimum 8GB RAM and 4-core processor
-
 * OS: Windows 8/10 or Linux
-
 * Java: JDK 1.8 or higher
-
 * IDE: Eclipse/Netbeans/IntelliJ and PyCharm
-
 * Ardupilot with Cygwin on Windows 8/10 (https://ardupilot.org/dev/docs/building-setup-windows-cygwin.html)
-
 * Python 3.6 (preferred Anaconda distribution)
-
-* PyTorch 1.5.0
-
 * TensorBoard 2+ (optional for visulization of training process)
-
 * Cuda 10.1 (optional for GPU acceleration)
 
+## Dependencies
+* PyTorch 1.5.0
+* DroneKit
+* py4j 
 
 ## Using Toolset
 
