@@ -19,6 +19,7 @@ A toolset to support automated system-level testing of unmanned aerial systems (
 ## Dependencies
 * PyTorch 1.5.0
 * DroneKit 2.9.2
+* pymavlink 2.4.8
 * py4j 0.10.8
 
 
