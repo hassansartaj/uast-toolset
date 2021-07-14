@@ -13,8 +13,6 @@ A toolset to support automated system-level testing of unmanned aerial systems (
 * IDE: Eclipse/Netbeans/IntelliJ and PyCharm
 * Ardupilot SITL
 * Python 3.7 
-* TensorBoard 2+ (optional for visulization of training process)
-* Cuda 10.1 (optional for GPU acceleration)
 
 ## Dependencies
 * PyTorch 1.5.0
@@ -45,6 +43,7 @@ git clone https://github.com/hassansartaj/uast-toolset.git
 
 ### Step: 3
 * If using PyCharm IDE, import the *AITester* project in the workspace.
-* Run 'main.py' file with two command line arguments, (i) mode of execution (i.e., train/eval), and (ii) path to store trained model. 
+* Run 'main.py' file with two command line arguments, [arg1] mode of execution (i.e., train/eval), and [arg2] path to store trained model. 
+* If using Python command prompt, run the command `python main.py <arg1> <arg2>.
 
 
