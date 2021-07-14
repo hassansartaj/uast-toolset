@@ -24,7 +24,7 @@ A toolset to support automated system-level testing of unmanned aerial systems (
 * Install Ardupilot following the guidelines given in [Ardupilot Docs](https://ardupilot.org/dev/docs/building-setup-windows-cygwin.html). 
 * During Cygwin64 installation, make sure to install it in *C* drive with directory name *cygwin*
 * Install Anaconda with Python 3.7 
-* Using Anaconda command prompt, install the dependencies with specified versions. 
+* Using the Anaconda command prompt, install the dependencies with specified versions. 
   * To install PyTorch for GPU, use the command: `conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.1 -c pytorch`
   * To install PyTorch for CPU, use the command: `conda install pytorch==1.5.0 torchvision==0.6.0 cpuonly -c pytorch`
   * Install TensorBoard 2+ to visualize training data during execution. 
@@ -38,17 +38,17 @@ git clone https://github.com/hassansartaj/uast-toolset.git
 ```
 
 ### Step: 2 
-* Start the Eclipse and import the *ModelHandler* as Java project in the workspace. 
+* Start the Eclipse and import the *ModelHandler* as a Java project in the workspace. 
 * Run 'ModelServer.java' class as Java application. 
 
 ### Step: 3
 * If using PyCharm IDE, import the *AITester* project in the workspace.
 * Run 'main.py' file with two command line arguments, [arg1] mode of execution (i.e., train/eval), and [arg2] path to store trained model. 
 * If using Python command prompt, run the command: `python main.py <arg1> <arg2>`. 
-* This starts execution of 'main.py' with default hyperparameters used in pilot experiment. The hyperparameters can be changed in 'main.py' file.  
-* To visualize graphs, start Tensorboard using command (on Anaconda CMD): `tensorboard --logdir=[path to root directory of AITester]\runs`.
+* This starts execution of 'main.py' with default hyperparameters used in the pilot experiment. The hyperparameters can be changed in 'main.py' file.  
+* To visualize graphs, start Tensorboard using the command (on Anaconda CMD): `tensorboard --logdir=[path to root directory of AITester]\runs`.
 
 ### Step: 4
-* At the end of execution, training results files is stored in directory `AITester/results`.
-* The flight paths travered in each epoch are stored in file named `fpfile.txt`. 
+* At the end of execution, training results file is stored in the directory `AITester/results`.
+* The flight paths traversed in each epoch are stored in a file named `fpfile.txt`. 
 
