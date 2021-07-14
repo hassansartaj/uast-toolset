@@ -45,5 +45,9 @@ git clone https://github.com/hassansartaj/uast-toolset.git
 * If using PyCharm IDE, import the *AITester* project in the workspace.
 * Run 'main.py' file with two command line arguments, [arg1] mode of execution (i.e., train/eval), and [arg2] path to store trained model. 
 * If using Python command prompt, run the command: `python main.py <arg1> <arg2>`.
-* To visualize graphs, start Tensorboard using command: `tensorboard --logdir=[path to root directory of AITester]\runs`.
+* To visualize graphs, start Tensorboard using command (on Anaconda CMD): `tensorboard --logdir=[path to root directory of AITester]\runs`.
+
+### Step: 4
+* At the end of execution, training results files is stored in directory `AITester/results`.
+* The flight paths travered in each epoch are stored in file named `fpfile.txt`. 
 
