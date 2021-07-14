@@ -11,8 +11,8 @@ A toolset to support automated system-level testing of unmanned aerial systems (
 * OS: Windows 8/10 or Linux
 * Java: JDK 1.8 or higher
 * IDE: Eclipse/Netbeans/IntelliJ and PyCharm
-* Ardupilot with Cygwin on Windows 8/10 (https://ardupilot.org/dev/docs/building-setup-windows-cygwin.html)
-* Python 3.7 (preferred Anaconda distribution)
+* Ardupilot SITL
+* Python 3.7 
 * TensorBoard 2+ (optional for visulization of training process)
 * Cuda 10.1 (optional for GPU acceleration)
 
@@ -22,12 +22,28 @@ A toolset to support automated system-level testing of unmanned aerial systems (
 * pymavlink 2.4.8
 * py4j 0.10.8
 
-## Installations
+## Installations on Windows
+* Install Ardupilot following the guidelines given in [Ardupilot Docs] (https://ardupilot.org/dev/docs/building-setup-windows-cygwin.html). 
+* During Cygwin64 installation, make sure to install it in *C* drive with directory name *cygwin*
+* Install Anaconda with Python 3.7 
+* Using Anaconda command prompt, install the dependencies with specified versions. 
+	Also install TensorBoard 2+ to visualize training data during execution. 
+* To make use of GPU, install Cuda 10.1
 
 ## Using Toolset
 
 ### Step: 1 
+Clone the repository using the following command.
+```
+git clone https://github.com/hassansartaj/uast-toolset.git
+```
 
 ### Step: 2 
+* Start the Eclipse and import the *ModelHandler* as Java project in the workspace. 
+* Run 'ModelServer' class as Java application. 
+
+### Step: 3
+* If using PyCharm IDE, import the *AITester* project in the workspace.
+* Run 'main.py' file with two command line arguments, (i) mode of execution (i.e., train/eval), and (ii) path to store trained model. 
 
 
