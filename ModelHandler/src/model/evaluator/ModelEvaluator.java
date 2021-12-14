@@ -18,12 +18,21 @@ public class ModelEvaluator {
 	}
 
 
-	public int evaluateModel(String state, HashMap<String, Integer> data) {
+	public HashMap<String, String> evaluateModel(String state, HashMap<String, Integer> data) {
 		int failedCount = 0;
+		HashMap<String,String> evalresult = new HashMap<>();
+		evalresult.put("count", "0");
+		evalresult.put("failed", "");
+		evalresult.put("passed", "");
+		
+//		OCLEvaluator.setupOCLEvalutor(modelPath);
+//		constraints = ConstraintsLoader.loadConstraints("constraints/copter-constraints.ocl");
+//		String stateConstraints = constraints.get(state);
+//		ArrayList<FlightData> flightData = constructFlightData(data);
 		
 		String stateConstraints = extractStateInvariants(state);
 		String [] allConstraints = null;
-		
+				
 		if(stateConstraints != null)
 			allConstraints = stateConstraints.split(";");
 		for(String constraint : allConstraints) {
@@ -41,13 +50,16 @@ public class ModelEvaluator {
 			if(!result.equals("true")){
 				System.out.println("[Failed] "+constraint);
 				failedCount++;
+				evalresult.put("failed", evalresult.get("failed")+constraint+"!@!");
+				evalresult.put("count", failedCount+"");
 			}
 			else{	
 				System.out.println("[Passed] "+constraint);
+				evalresult.put("passed", evalresult.get("passed")+constraint+"!@!");
 			}
 		}
 		OCLEvaluator.resetEOCL();
-		return failedCount;
+		return evalresult;
 	}
 
 	private String extractStateInvariants(String state) {
@@ -83,37 +95,6 @@ public class ModelEvaluator {
 			flightData.add(fd);
 		}
 		return flightData;
-	}
-
-
-	//TODO: need to relocate - for testing
-	public static void main(String[] args) {
-		//		GatewayServer gatewayServer = new GatewayServer(new ModelEvaluator());
-		//		gatewayServer.start();
-		//		System.out.println("Gateway Server Started");
-
-		//gatewayServer.shutdown()
-		OCLEvaluator.setupOCLEvalutor(modelPath);
-		String constraint = "context ArduCopter inv: self.airspeed>0 and self.airspeed<100";
-		//		String constraint = "ArduCopter.allInstances()->exists(a| a.airspeed>0 and a.airspeed<100)";	
-		ArrayList<ClassifierTuple> tuples = OCLEvaluator.getInstanceModel(modelPath, constraint);
-
-		//temp data- for testing
-		ArrayList<FlightData> flightData = new ArrayList<>(1);
-		FlightData fd1 = new FlightData("airspeed", 50);
-		flightData.add(fd1);
-		
-		OCLEvaluator.updateInstanceModel(tuples, fd1);
-		String result = OCLEvaluator.evaluateConstraint(tuples, constraint);
-		if(!result.equals("true") && !result.equals("false"))
-			result = "false";
-
-		if(!result.equals("true")){
-			System.out.println("Failed constraint");
-		}
-		else{	
-			System.out.println("Passed constraint");
-		}
 	}
 
 }

@@ -31,24 +31,4 @@ class Py2JavaCommunicator():
         for key, value in flight_data.items():
             hmp.put(key, value)
         failed = model_evaluator.evaluateModel(flight_state, hmp)
-        return failed
-
-
-#for testing
-# fstate='Takeoff'
-# flight_data = {'airspeed': 500, 'groundspeed': 90}
-# failnum = Py2JavaCommunicator.evaluateConstraints(fstate, flight_data)
-# print('failnum: ', failnum)
-# initial_state, final_state, states, st2nst_map, actions, st2act_map, properties = Py2JavaCommunicator.getUAVModelInfo()
-# print("Initial: ", initial_state, " - Final: ", final_state, "\n")
-# print("Received States:\n", states)
-# print("Received Next States Map:\n")
-# for key, value in st2nst_map.items():
-#     print(key, value, "\n")
-# print("Received Actions:\n", actions)
-# print("Received State Actions Map:\n")
-# for key, value in st2act_map.items():
-#     print(key, value, "\n")
-# print("Received Properties:\n")
-# for key, value in properties.items():
-#     print(key, value[0], value[1])
+        return eval(failed["count"]),failed
