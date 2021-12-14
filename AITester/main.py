@@ -36,16 +36,26 @@ EPS_DECAY = 100
 TARGET_UPDATE = 10
 MEMORY_SIZE = 1024 #10000 - std
 LEARNING_RATE = 0.001
-NUM_EPISODES = 5000
+NUM_EPISODES = 1000
 
 if __name__ == '__main__':
     
+#     sys.argv[1] = 'train/eval'
+#     sys.argv[2] = 'trainedmodel'
+#     sys.argv[3] = "AITester or Random"
+#     tensorboard --logdir=E:\ate-pro-v1\aiate-uav\runs
+
     if len(sys.argv) < 3:
         print('The following two arguments are required. \n argv[1] = mode (train/eval) \n argv[2] = model path')
         sys.exit(0)
     mode = sys.argv[1]
     if mode != 'train' and mode != 'eval':
         print('The first argument must be train or eval')
+        sys.exit(0)
+    algo = sys.argv[3]
+
+    if algo != 'AITester' and algo != 'Random':
+        print('The last argument must be AITester or Random')
         sys.exit(0)
 
     model_path = sys.argv[2]
@@ -57,9 +67,10 @@ if __name__ == '__main__':
 
     show_plot=False
     strategy = EpsilonGreedyStrategy(EPS_START, EPS_END, EPS_DECAY)
-    agent = AITester(strategy, env_manager, MEMORY_SIZE, LEARNING_RATE, device, show_plot)    
+    agent = AITester(strategy, env_manager, MEMORY_SIZE, LEARNING_RATE, device, show_plot,algo)
 
+    print("Running on: ",algo)
     if mode == 'train':
-        agent.train(NUM_EPISODES, BATCH_SIZE, GAMMA, TARGET_UPDATE, model_path, restore=False)
+        agent.train(NUM_EPISODES, BATCH_SIZE, GAMMA, TARGET_UPDATE, model_path, restore=True)
     elif mode == 'eval':
         agent.evaluate(NUM_EPISODES , model_path)
