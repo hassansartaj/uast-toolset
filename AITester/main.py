@@ -71,6 +71,6 @@ if __name__ == '__main__':
 
     print("Running on: ",algo)
     if mode == 'train':
-        agent.train(NUM_EPISODES, BATCH_SIZE, GAMMA, TARGET_UPDATE, model_path, restore=True)
+        agent.train(NUM_EPISODES, BATCH_SIZE, GAMMA, TARGET_UPDATE, model_path, restore=False)
     elif mode == 'eval':
         agent.evaluate(NUM_EPISODES , model_path)

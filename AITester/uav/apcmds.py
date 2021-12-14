@@ -10,24 +10,38 @@ import subprocess
 from subprocess import Popen
 from dronekit import connect, VehicleMode, LocationGlobalRelative
 from pymavlink import mavutil
+import os
 
 vehicle = None
 
-#TODO: change hard coded paths
-#--Need to execute this once
-#execute ardupilot sitl using cygwin
-p = Popen("C:/cygwin/Cygwin.bat", stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-p.stdin.write('{}\n'.format('cd ardupilot/Tools/autotest').encode('utf-8'))
-p.stdin.write('{}\n'.format('python2 sim_vehicle.py -v ArduCopter --console --map').encode('utf-8'))
-p.stdin.close()
-# child_id = p.pid
-time.sleep(30) #time issue - varies from pc to pc
-subprocess.Popen.kill(p)
-# time.sleep(5)
+def restartSim():
+    global vehicle
+    #TODO: this path need to be configured according to the system running this process
+    g = Popen("\\Users\\pc\\AITester\\uav\\ardu.bat", stdin=subprocess.PIPE,
+              stdout=subprocess.PIPE)
+    time.sleep(2)
+    #TODO: change hard coded paths
+    #--Need to execute this once
+    #execute ardupilot sitl using cygwin
+    p = Popen("C:/cygwin64/Cygwin.bat", stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    p.stdin.write('{}\n'.format('cd Ardupilot/Tools/autotest').encode('utf-8'))
+    p.stdin.write('{}\n'.format('python sim_vehicle.py -v ArduCopter --console --map').encode('utf-8'))
+    p.stdin.close()
+    # child_id = p.pid
+    time.sleep(30) #time issue - varies from pc to pc
+    # print("Killing cygwin process")
+    subprocess.Popen.kill(p)
+    #if not p.poll():
+    #    print("Process correctly halted")
+    #for proc in psutil.process_iter(['pid', 'name', 'username']):
+    #    if "mavproxy" in proc.name() or "arducopter" in proc.name():
+    #        print(proc.info)
+    #        os.kill(p.pid, 9)
 
-print("Connecting to vehicle ...")
-vehicle = connect("127.0.0.1:14550", wait_ready=True)
+    print("Connecting to vehicle ...")
+    vehicle = connect("127.0.0.1:14550", wait_ready=True)
 
+restartSim()
 gnd_speed=5
 
 
@@ -40,7 +54,7 @@ def arm():
     # Don't try to arm until autopilot is ready
     print (" Waiting for vehicle to initialise...")
     while not vehicle.is_armable:
-        time.sleep(0.2)
+        time.sleep(0.01)
     print (" Arming motors")
     # Copter should arm in GUIDED mode
     vehicle.mode    = VehicleMode("GUIDED")
@@ -49,15 +63,15 @@ def arm():
     print(" Waiting for vehicle to arm...")
     while not vehicle.armed:
         # vehicle.mode    = VehicleMode("GUIDED")
-        vehicle.armed   = True
-        time.sleep(0.2)
+        vehicle.armed= True
+        time.sleep(0.01)
     print(" Armed")
 
 # --> Ok
 def disarm():
     if vehicle.location.global_relative_frame.alt >= 2:
         land()
-        time.sleep(0.2)
+        time.sleep(0.01)
     vehicle.armed = False
     print(" Waiting for disarming...")
     while vehicle.armed:
@@ -79,7 +93,7 @@ def takeoff_simple(altitude=20):
         if vehicle.location.global_relative_frame.alt >= altitude * 0.95:
             print(" Reached target altitude")
             break
-        time.sleep(0.2)
+        time.sleep(0.01)
     return False
 
 # --> Ok
@@ -95,7 +109,7 @@ def takeoff_complex(altitude=20):
         elif current_altitude >= altitude * 0.6:
             thrust = SMOOTH_TAKEOFF_THRUST
         set_attitude(thrust=thrust)
-        time.sleep(0.2)
+        time.sleep(0.01)
         if not vehicle.armed:
            return True
     return False
@@ -104,16 +118,18 @@ def takeoff_complex(altitude=20):
 def reset_mode():
     vehicle.mode = VehicleMode("GUIDED")
     print(" Waiting for GUIDED mode...")
-    while vehicle.mode.name is not "GUIDED":
-        time.sleep(0.2)
+    while vehicle.mode.name != "GUIDED":
+        vehicle.mode = VehicleMode("GUIDED")
+        time.sleep(0.01)
     print(" GUIDED is changed.")
 
 # --> Ok
 def loiter():
     vehicle.mode = VehicleMode("LOITER")
     print(" Waiting for Loiter to start...")
-    while vehicle.mode.name is not "LOITER":
-        time.sleep(0.2)
+    while vehicle.mode.name != "LOITER":
+        vehicle.mode = VehicleMode("LOITER")
+        time.sleep(0.01)
         if not vehicle.armed:
            return True
     print(" Loiter is started.")
@@ -141,22 +157,30 @@ def increase_altitude():
     print(" Increasing altitude...")
     set_attitude(thrust=0.7, duration=3)
     time.sleep(1)
-
+    
+    
 # --> Ok
 # Up & Down are similar to the move forward and move backward
 def move_up():
     set_velocity_body(vehicle, gnd_speed, 0, 0)
     return True if not vehicle.armed else False
+    # time.sleep(1)
 
 # --> Ok
 def move_down():
     set_velocity_body(vehicle, -gnd_speed, 0, 0)
     return True if not vehicle.armed else False
+    # time.sleep(1)
 
 # --> Ok
 def decrease_altitude():
+    # CRED = '\033[91m'
+    # CEND = '\033[0m'
+    # print(CRED + " Current Alt: "+ str(vehicle.location.global_relative_frame.alt) + CEND)
     print(" Decreasing altitude...")
     set_attitude(thrust=0.3, duration=3)
+    # time.sleep(1)
+    # print(" After Dec Alt: ", vehicle.location.global_relative_frame.alt)
 
 # may not be required - single event
 def change_airspeed():
@@ -172,12 +196,13 @@ def change_airspeed():
         -1, 0, 0, 0, 0  # param 3 - 7
     )
     vehicle.send_mavlink(msg)
-    time.sleep(0.2)
+    time.sleep(0.01)
 
 # may not be required - single event
 def increase_airspeed():
     print(" Increasing airspeed...")
     vehicle.airspeed = vehicle.airspeed+1
+
 
 # may not be required - single event
 def decrease_airspeed():
@@ -217,6 +242,7 @@ def move_forward():
                  thrust=0.5, duration=3.21)
 
     return True if not vehicle.armed else False
+
 
 # --> Ok
 def move_backward():
@@ -308,33 +334,38 @@ def fly_circle():
 def return_to_launch():
     vehicle.mode = VehicleMode("RTL")
     print(" Waiting for RTL...")
-    while vehicle.mode.name is not "RTL":
-        time.sleep(0.2)
+    while vehicle.mode.name != "RTL":
+        vehicle.mode = VehicleMode("RTL")
+        time.sleep(0.01)
         if not vehicle.armed:
            return True
     print(" RTL started...")
-    while vehicle.mode.name is "RTL":
+    while vehicle.mode.name == "RTL":
         if vehicle.location.global_relative_frame.alt<1:
             break
-        time.sleep(0.2)
+        time.sleep(0.01)
     print(" RTL completed...")
     return False
+
 
 # --> Ok
 def land():
     vehicle.mode = VehicleMode("LAND")
     print(" Starting to land...")
-    while vehicle.mode.name is not "LAND":
-        time.sleep(0.2)
+    while vehicle.mode.name != "LAND":
+        vehicle.mode = VehicleMode("LAND")
+        time.sleep(0.01)
         if not vehicle.armed:
            return True
 
 
     print(" Landing is started.")
-    while vehicle.mode.name is "LAND":
-        time.sleep(0.2)
+    while vehicle.mode.name == "LAND":
+        time.sleep(0.01)
         if not vehicle.armed:
+            # break
             return True
+        # print("vehicle.location.global_relative_frame.alt ", vehicle.location.global_relative_frame.alt)
         if vehicle.location.global_relative_frame.alt<5: # if vehicle.location.global_relative_frame.alt<1:
             break
     print(" Landing is completed.")
@@ -371,15 +402,16 @@ def close_vehicle():
 def reset_sitl():
     close_vehicle()
     reboot_autopilot()
-    print("Connecting to vehicle ...")
-    global vehicle
-    vehicle = connect("127.0.0.1:14550", wait_ready=True)
+    restartSim()
+    #print("Connecting to vehicle ...")
+    #global vehicle
+    #vehicle = connect("127.0.0.1:14550", wait_ready=True)
     
 # --> check
 def stop_sitl():
     print(" Stopping Ardupilot SITL...")
     close_vehicle()
-#     pass
+
 
 #######################################################################################################################
 #   Helper functions
@@ -432,7 +464,7 @@ def set_attitude(roll_angle=0.0, pitch_angle=0.0,
     while time.time() - start < duration:
         send_attitude_target(roll_angle, pitch_angle,
                              yaw_angle, yaw_rate, use_yaw_rate, thrust)
-        time.sleep(0.1)
+        time.sleep(0.01)
     # Reset attitude, or it will persist for 1s more due to the timeout
     send_attitude_target(0, 0, 0, 0, True, thrust)
 
@@ -522,116 +554,3 @@ def get_vehicle_state():
 #             vehicle.groundspeed, vehicle.attitude.RollAngle, vehicle.attitude.PitchAngle, 
 #             vehicle.attitude.YawAngle, vehicle.battery, vehicle.rangefinder.distance)
 
-# def get_vehicle_state():
-#     # state = {}
-#     # state[0] = vehicle.mode
-#     # state[1] = vehicle.location.global_relative_frame.alt
-#     # state[2] = vehicle.airspeed
-#     # state[3] = vehicle.groundspeed
-#     # state[4] = vehicle.heading
-#     # state[5] = vehicle.attitude.pitch
-#     # state[6] = vehicle.attitude.roll
-#     # state[7] = vehicle.attitude.yaw
-#     # state[8] = vehicle.battery.voltage
-#     # state[9] = vehicle.velocity
-# 
-#     return (vehicle.mode.name, vehicle.location.global_relative_frame.alt, vehicle.airspeed,
-#             vehicle.groundspeed, vehicle.heading, vehicle.attitude.pitch, vehicle.attitude.roll,
-#             vehicle.attitude.yaw, vehicle.battery.voltage, vehicle.velocity)
-
-
-
-#######################################################################################################################
-#   Main - For testing purposes
-#######################################################################################################################
-if __name__=='__main__':
-    # connect_to_uav()
-    arm()
-    takeoff_simple(20)
-    # takeoff_complex(30)
-
-    for _ in range(5):
-        increase_altitude()
-        state = get_vehicle_state()
-        print("[STATE]:- Mode:%s, Alt:%s, AS:%s, GS:%s, Heading:%s, "
-              "Pitch:%s, Roll:%s, Yaw:%s, Battery:%s, Velocity:%s" % (state))
-
-    for _ in range(5):
-        move_forward()
-        time.sleep(1)
-        state = get_vehicle_state()
-        print("[STATE] ", state)
-    # print_vehicle_state("Move forward")
-
-    # for _ in range(5):
-    #     increase_airspeed()
-    # print_vehicle_state("Increase Airspeed")
-    #
-    # for _ in range(5):
-    #     decrease_airspeed()
-    # print_vehicle_state("Decrease Airspeed")
-
-    # for _ in range(5):
-    #     change_airspeed()
-    # print_vehicle_state("Increase Airspeed")
-
-
-    # loiter()
-    # print_vehicle_state("Loiter")
-    # time.sleep(20)
-    # reset_mode()
-    # print_vehicle_state("Mode Change")
-
-    # for _ in range(5):
-    #     print("Holding Position...")
-    #     hold_position()
-    # print_vehicle_state("Holding Position")
-    #
-    # for _ in range(5):
-    #     print("Holding Altitude...")
-    #     hold_altitude()
-    # print_vehicle_state("Holding Altitude")
-    #
-    # for _ in range(5):
-    #     turn_left()
-    # print_vehicle_state("Turn Left")
-
-    # for _ in range(5):
-    #     turn_right()
-    # print_vehicle_state("Turn Right")
-
-    # for _ in range(5):
-    #     goto_location()
-    #     time.sleep(1)
-    # print_vehicle_state("Go To")
-
-    for _ in range(5):
-        move_backward()
-        time.sleep(1)
-    print_vehicle_state("Move backward")
-
-
-    # for _ in range(5):
-    #     move_up()
-    # print_vehicle_state("MoveUp")
-    #
-    # for _ in range(5):
-    #     move_down()
-    # print_vehicle_state("MoveDown")
-
-
-    # land()
-    # print_vehicle_state("Land")
-
-    return_to_launch()
-
-    disarm()
-    print_vehicle_state("Disarm")
-
-    # print("Rebooting autopilot")
-    # reboot_autopilot()
-
-    # print("Rebooting uav")
-    # reboot_vehicle()
-
-    stop_sitl()
