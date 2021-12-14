@@ -226,17 +226,3 @@ class UAVModel():
         return properties
     
 
-# print("\nTesting: \n")
-# name='TakeOff'
-# ns = UAVModel.getNextStates(name)
-# print(name, " - NextStates: \n", ns)
-# 
-# hn = UAVModel.hasNextState(0, 1)
-# print(" - hasNextState: \n", hn)
-# 
-# nums = UAVModel.getNextStatesNums(21)
-# print(" - NextStatesNums: \n", nums)
-# 
-# pa = UAVModel.getPossibleActions(name)
-# print(name, " - PossibleActions: \n", pa)
-

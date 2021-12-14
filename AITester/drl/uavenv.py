@@ -55,6 +55,7 @@ class UAVCopterEnv():
 #         next_states = UAVModel.getNextStatesNums(self.state)
         possible_actions = UAVModel.getPossibleActions(self.state[AFS].item())
         action_num=0
+        failed = {"count":"0","failed":"","passed":""}
         if type(action) is np.ndarray:
             action_num = action.item()
         else:
@@ -63,9 +64,8 @@ class UAVCopterEnv():
         if action_num not in possible_actions:
             reward=-1.0
             done=False
-
-            return torch.from_numpy(self.state), reward, done, {}
-            return np.array(self.state), reward, done, {}
+            return torch.from_numpy(self.state), reward, done, {},failed
+            return np.array(self.state), reward, done, {},failed
 
         #perform action on ardupilot using dronekit 
         isDisarmed=self.perform_action(UAVModel.getActionName(action_num))
@@ -74,28 +74,29 @@ class UAVCopterEnv():
         if not isDisarmed:
             uav_state = get_vehicle_state()
             next_states = UAVModel.getNextStates4StateAction(self.state[AFS].item(), action_num)
+         
 
             self.fpfile.write("\n=> State: "+UAVModel.getStateName(self.state[AFS].item())+" - Action: "+UAVModel.getActionName(action_num))
             self.fpfile.flush()
-
             index = random.randrange(len(next_states))
     #         self.state[AFS] = next_states[index]
             self.set_state(next_states[index], uav_state)
-
             if self.state[AFS].item() == self.final_state:
                 done = True
                 self.fpfile.write("\n\n--------------------Path End------------------\n\n")
                 self.fpfile.flush()
 
             #For eval: calculate average reward obtained per time step.
+            #TODO: need to change the following lines
+            # reward=0.0
             if not done:
-                reward = self.calculate_reward()
+                reward,failed = self.calculate_reward() #TODO: need to calculate discounted rewards
         else:
             done = True
             print("Vehicle disarmed!!")
 
 #         return np.array(self.state), reward, done, {}
-        return torch.from_numpy(self.state), reward, done, {}
+        return torch.from_numpy(self.state), reward, done, {},failed
     
     def perform_action(self, action):
         isDisarmed=False
@@ -174,7 +175,7 @@ class UAVCopterEnv():
         self.state[HEADING] = round(uav_state[6],4)
         self.state[BATTERY] = round(uav_state[7],4)
         self.state[DISTANCE] = round(uav_state[8],4)
-
+        
     def close(self):
         stop_sitl()
     
@@ -208,8 +209,8 @@ class UAVCopterEnvManager():
         return state_len #len(self.env.state_space)
         
     def take_action(self, action):
-        _, reward, self.done, _ = self.env.step(action)
-        return torch.tensor([reward], device=self.device)
+        _, reward, self.done, _,failed = self.env.step(action)
+        return torch.tensor([reward], device=self.device),failed
     
     def get_state(self):
         return torch.from_numpy(self.env.state)
