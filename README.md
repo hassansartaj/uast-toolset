@@ -43,7 +43,7 @@ git clone https://github.com/hassansartaj/uast-toolset.git
 
 ### Step: 3
 * If using PyCharm IDE, import the *AITester* project in the workspace.
-* Run 'main.py' file with two command line arguments, <arg1> mode of execution (i.e., train/eval), <arg2> path to store trained model, and <arg3> run AITester or Random. 
+* Run 'main.py' file with two command line arguments, <arg1> mode of execution (i.e., train/eval), <arg2> path to store trained model, and <arg3> run *AITester* or *Random*. 
 * If using Python command prompt, run the command: `python main.py <arg1> <arg2> <arg3>`. 
 * This starts execution of 'main.py' with default hyperparameters used in the pilot experiment. The hyperparameters can be changed in 'main.py' file.  
 * To visualize graphs, start Tensorboard using the command (on Anaconda CMD): `tensorboard --logdir=[path to root directory of AITester]\runs`.
