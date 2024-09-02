@@ -1,5 +1,5 @@
 # UAS Testing Toolset
-A toolset to support automated system-level testing of unmanned aerial systems (UAS). The toolset utilizes model-based testing (MBT) and artificial intelligence (AI) techniques to automatically generate, execute, and evaluate various test scenarios. Therefore, the toolset consists of two main modules (i) *ModelHandler* responsible for handling MBT side of the approach, and (ii) *AITester* contains the implementation of AI technique for testing UAS. 
+A toolset to support automated system-level testing of unmanned aerial systems (UAS). The toolset utilizes model-based testing (MBT) and artificial intelligence (AI) techniques to automatically generate, execute, and evaluate various test scenarios. Therefore, the toolset consists of two main modules (i) *ModelHandler* responsible for handling the MBT side of the approach, and (ii) *AITester* contains the implementation of AI technique for testing UAS. 
 
 
 # Related Publications
@@ -8,7 +8,7 @@ A toolset to support automated system-level testing of unmanned aerial systems (
 _______________________________________
 Sartaj, Hassan, Asmar Muqeet, Muhammad Zohaib Iqbal, and Muhammad Uzair Khan (2024). "Automated system-level testing of unmanned aerial systems." Automated Software Engineering 31, 64: 1–48.
 DOI: https://doi.org/10.1007/s10515-024-00462-9
-```
+
 ```
 Download [PDF](https://www.researchgate.net/publication/382796050_Automated_system-level_testing_of_unmanned_aerial_systems)
 ```
@@ -18,10 +18,11 @@ Download [PDF](https://www.researchgate.net/publication/382796050_Automated_syst
 __________________________________________
 Sartaj, Hassan. "Automated Approach for System-level Testing of Unmanned Aerial Systems." In 2021 36th IEEE/ACM International Conference on Automated Software Engineering (ASE), pp. 1069-1073. IEEE, 2021.
 DOI: 10.1109/ASE51524.2021.9678902 
-```
+
 ```
 Download [PDF](https://www.researchgate.net/publication/357999877_Automated_Approach_for_System-level_Testing_of_Unmanned_Aerial_Systems)
 ```
+
 
 # Getting Started
 
